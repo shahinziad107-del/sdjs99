@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Falcons </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <!-- WebGL Background Canvas -->
+    <canvas id="liquid-canvas"></canvas>
+
+    <!-- UI Overlay -->
+    <div id="ui-container">
+        <nav class="glass-nav">
+            <div class="logo">Black Falcons</div>
+            <button id="theme-toggle" class="glass-button-icon" aria-label="Toggle Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5" />
+                    <path
+                        d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
+        </nav>
+
+        <main id="content-wrapper">
+            <!-- Home View -->
+            <section id="home-view" class="active-view">
+                <div class="hero-section">
+                    <h1 class="hero-title">Team <span class="highlight">Black Falcons</span></h1>
+                    <p class="hero-brief">
+                        Exploring the boundaries of digital fluidity. A showcase of interactive refraction and
+                        glassmorphism.
+                    </p>
+                </div>
+
+                <div class="team-section">
+                    <h2>The Team</h2>
+                    <div class="team-grid">
+                        <!-- 5 Team Members -->
+                        <div class="glass-card team-card">
+                            <div class="avatar"></div>
+                            <h3>Zaid Shahin</h3>
+                            <p>Lead Designer,Developer</p>
+                        </div>
+                        <div class="glass-card team-card">
+                            <div class="avatar"></div>
+                            <h3>Khalid mohamed</h3>
+                            <p>Developer , supervisor</p>
+                        </div>
+                        <div class="glass-card team-card">
+                            <div class="avatar"></div>
+                            <h3>Ahmed Hossam</h3>
+                            <p>Motion, leader of Team</p>
+                        </div>
+                        <div class="glass-card team-card">
+                            <div class="avatar"></div>
+                            <h3>Ahmed Morsy</h3>
+                            <p>Research, good Manager</p>
+                        </div>
+                        <div class="glass-card team-card">
+                            <div class="avatar"></div>
+                            <h3> Belal Arafa</h3>
+                            <p>Manager , reader</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <button id="more-info-btn" class="glass-button large-button">
+                        <span class="btn-text"> Download files , video </span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Info View -->
+            <section id="info-view" class="hidden-view">
+                <button id="back-btn" class="glass-button-small">← Back</button>
+
+                <div class="downloads-container">
+                    <h2>Resources</h2>
+                    <p>Access our project materials below.</p>
+
+                    <div class="download-grid">
+                        <button class="glass-card download-card video-link"
+                            data-video-src="https://drive.google.com/file/d/1cMprSCtsN61axCXbUV9WBPMk3y8nkEv5/preview">
+                            <div class="icon">▶</div>
+                            <div class="info">
+                                <h3>Project Video</h3>
+                                <p>Video • Watch Now</p>
+                            </div>
+                        </button>
+                        <a href="mode00.pdf" class="glass-card download-card ppt-link" download="Project_Report.pdf">
+                            <div class="icon">📄</div>
+                            <div class="info">
+                                <h3>Project Report</h3>
+                                <p>PDF • Download</p>
+                            </div>
+                        </a>
+                        <a href="pd33.pdf" class="glass-card download-card ppt-link" download="Technical_Docs.pdf">
+                            <div class="icon">📄</div>
+                            <div class="info">
+                                <h3>Principles of Management for English</h3>
+
+
+                                <p>PDF • Download</p>
+                            </div>
+                        </a>
+                        <a href="pd44.pdf" class="glass-card download-card ppt-link" download="Presentation.pdf">
+                            <div class="icon">📄</div>
+                            <div class="info">
+                                <h3>Principles of Management for Arabic</h3>
+                                <p>PDF • Download</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div class="video-wrapper">
+                <iframe id="video-frame" src="" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOM Overlays for Visual Effects -->
+    <div id="cursor-halo"></div>
+    <div id="flash-overlay"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
